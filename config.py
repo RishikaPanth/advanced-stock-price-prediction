@@ -25,6 +25,8 @@ BATCH_SIZE = 32
 
 LEARNING_RATE = 0.001
 
+TARGET_COLUMN = "Close"
+
 
 # Prediction
 
@@ -58,3 +60,9 @@ FEATURE_COLUMNS = [
 ]
 
 TARGET_COLUMN = "Close"
+
+LSTM_UNITS = [100, 50, 50]
+
+DROPOUT_RATE = 0.2
+
+LEARNING_RATE = 0.001

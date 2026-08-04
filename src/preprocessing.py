@@ -10,13 +10,13 @@ def clean_data(df):
 
     return df
 
-def scale_data(df, columns):
+def scale_data(df, feature_columns):
     
 
     scaler = MinMaxScaler()
 
     scaled_df = df.copy()
 
-    scaled_df[columns] = scaler.fit_transform(df[columns])
+    scaled_df[feature_columns] = scaler.fit_transform(scaled_df[feature_columns])
 
     return scaled_df, scaler
