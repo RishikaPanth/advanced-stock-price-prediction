@@ -9,6 +9,9 @@ from config import SCALER_PATH
 import numpy as np
 from src.sequence import create_sequences
 from src.model import build_lstm_model
+from sklearn.model_selection import train_test_split
+from src.trainer import train_model
+from src.utils import save_model
 
 
 def main():
@@ -49,6 +52,26 @@ def main():
     LOOK_BACK,
     len(FEATURE_COLUMNS)
     
+)
+
+    X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.2,
+    shuffle=False
+)
+
+    history = train_model(
+    model,
+    X_train,
+    y_train,
+    EPOCHS,
+    BATCH_SIZE
+)
+
+    save_model(
+    model,
+    MODEL_PATH
 )
 
     ## save_scaler(scaler, SCALER_PATH)
