@@ -18,3 +18,9 @@ def save_model(model, path):
 
     ## Save trained model.
     model.save(path)
+
+def log_step(message):
+    """
+    Print a formatted progress message.
+    """
+    print(f"✓ {message}")
