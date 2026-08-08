@@ -17,7 +17,7 @@ END_DATE = "2025-02-01"
 # Model Parameters
 
 
-LOOK_BACK = 30
+LOOK_BACK = 35
 
 EPOCHS = 100
 
