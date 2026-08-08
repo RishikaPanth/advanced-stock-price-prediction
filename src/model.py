@@ -6,47 +6,37 @@ from config import LSTM_UNITS, DROPOUT_RATE, LEARNING_RATE
 
 def build_lstm_model(look_back, num_features):
 
-    first_units, second_units, third_units = LSTM_UNITS
+    model = Sequential()
 
-    model = Sequential([
-        
-        Input(
-            shape=(look_back, num_features)
-        ),
+    model.add(
+        Input(shape=(look_back, num_features))
+    )
 
-        LSTM(
-            first_units,
-            return_sequences=True
-        ),
+    for i, units in enumerate(LSTM_UNITS):
 
-        Dropout(
-            DROPOUT_RATE
-        ),
+        return_sequences = i < len(LSTM_UNITS) - 1
 
-        LSTM(
-            second_units,
-            return_sequences=True
-        ),
+        model.add(
+            LSTM(
+                units=units,
+                return_sequences=return_sequences
+            )
+        )
 
-        Dropout(
-            DROPOUT_RATE
-        ),
+        model.add(
+            Dropout(DROPOUT_RATE)
+        )
 
-        LSTM(
-            third_units
-        ),
-
-        Dropout(
-            DROPOUT_RATE
-        ),
-
+    model.add(
         Dense(
             25,
             activation="relu"
-        ),
+        )
+    )
 
+    model.add(
         Dense(1)
-    ])
+    )
 
     optimizer = Adam(
         learning_rate=LEARNING_RATE
