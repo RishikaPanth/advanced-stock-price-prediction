@@ -70,3 +70,40 @@ LEARNING_RATE = 0.001
 SHOW_DATA_PREVIEW = False
 
 SHOW_MODEL_SUMMARY = False
+
+PRICE_FEATURES = [
+    "Close",
+    "High",
+    "Low",
+    "Open",
+    "Volume"
+]
+
+TREND_FEATURES = [
+    "SMA_20",
+    "EMA_20",
+    "MACD"
+]
+
+MOMENTUM_FEATURES = [
+    "RSI",
+    "STOCH"
+]
+
+VOLATILITY_FEATURES = [
+    "ATR",
+    "BB_HIGH",
+    "BB_LOW"
+]
+
+VOLUME_FEATURES = [
+    "OBV"
+]
+
+FEATURE_COLUMNS = (
+    PRICE_FEATURES
+    + TREND_FEATURES
+    + MOMENTUM_FEATURES
+    + VOLATILITY_FEATURES
+    + VOLUME_FEATURES
+)
