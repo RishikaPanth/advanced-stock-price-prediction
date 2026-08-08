@@ -76,14 +76,12 @@ TREND_FEATURES = [
 ]
 
 MOMENTUM_FEATURES = [
-    "RSI",
+   
     
 ]
 
 VOLATILITY_FEATURES = [
-    "ATR",
-    "BB_HIGH",
-    "BB_LOW"
+   
 ]
 
 VOLUME_FEATURES = [
@@ -93,6 +91,7 @@ VOLUME_FEATURES = [
 FEATURE_COLUMNS = (
     PRICE_FEATURES
     + TREND_FEATURES
+    + VOLUME_FEATURES
     
    )
 
