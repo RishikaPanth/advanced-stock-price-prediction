@@ -49,7 +49,7 @@ SCALER_PATH = "models/scaler.pkl"
 
 
 
-#TARGET_COLUMN = "Close"
+
 
 LSTM_UNITS = [100, 50, 50]
 
@@ -77,7 +77,7 @@ TREND_FEATURES = [
 
 MOMENTUM_FEATURES = [
     "RSI",
-    "STOCH"
+    
 ]
 
 VOLATILITY_FEATURES = [
@@ -93,4 +93,7 @@ VOLUME_FEATURES = [
 FEATURE_COLUMNS = (
     PRICE_FEATURES
     + TREND_FEATURES
+    
    )
+
+TARGET_COLUMN = "Close"
