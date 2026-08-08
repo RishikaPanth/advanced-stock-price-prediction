@@ -85,13 +85,13 @@ VOLATILITY_FEATURES = [
 ]
 
 VOLUME_FEATURES = [
-    "OBV"
+    
 ]
 
 FEATURE_COLUMNS = (
     PRICE_FEATURES
     + TREND_FEATURES
-    + VOLUME_FEATURES
+    
     
    )
 
