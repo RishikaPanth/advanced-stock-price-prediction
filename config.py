@@ -48,18 +48,8 @@ SCALER_PATH = "models/scaler.pkl"
 # Features
 
 
-FEATURE_COLUMNS = [
-    "Open",
-    "High",
-    "Low",
-    "Close",
-    "Volume",
-    "SMA_20",
-    "EMA_20",
-    "RSI"
-]
 
-TARGET_COLUMN = "Close"
+#TARGET_COLUMN = "Close"
 
 LSTM_UNITS = [100, 50, 50]
 
@@ -103,7 +93,4 @@ VOLUME_FEATURES = [
 FEATURE_COLUMNS = (
     PRICE_FEATURES
     + TREND_FEATURES
-    + MOMENTUM_FEATURES
-    + VOLATILITY_FEATURES
-    + VOLUME_FEATURES
-)
+   )
