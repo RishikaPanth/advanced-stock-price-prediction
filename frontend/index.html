@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stock Price Prediction</title>
+
+    <link rel="stylesheet" href="/dashboard/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div>
+            <h1>Stock Prediction</h1>
+            <p>LSTM-based stock price forecasting</p>
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            API Connected
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- Stock Information -->
+
+        <section class="stock-header">
+
+            <div>
+                <span class="label">STOCK</span>
+                <h2 id="ticker">AMZN</h2>
+            </div>
+
+            <button id="predictBtn">
+                Predict
+            </button>
+
+        </section>
+
+
+        <!-- Prediction Cards -->
+
+        <section class="cards">
+
+            <div class="card">
+
+                <span class="card-label">
+                    Latest Price
+                </span>
+
+                <h3 id="latestPrice">
+                    --
+                </h3>
+
+            </div>
+
+
+            <div class="card highlight">
+
+                <span class="card-label">
+                    Predicted Price
+                </span>
+
+                <h3 id="predictedPrice">
+                    --
+                </h3>
+
+            </div>
+
+
+            <div class="card">
+
+                <span class="card-label">
+                    Expected Change
+                </span>
+
+                <h3 id="expectedChange">
+                    --
+                </h3>
+                 <div id="prediction-status" class="prediction-status">
+        --
+                 </div>
+            </div>
+
+        </section>
+
+
+        <!-- Prediction Visualization -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Prediction Overview</h2>
+                    <p>Latest price vs model prediction</p>
+                </div>
+
+            </div>
+
+
+            <div class="prediction-bar">
+
+                <div class="price-point">
+
+                    <span>
+                        Current
+                    </span>
+
+                    <strong id="currentBarPrice">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="arrow">
+                    →
+                </div>
+
+
+                <div class="price-point prediction-point">
+
+                    <span>
+                        Predicted
+                    </span>
+
+                    <strong id="predictionBarPrice">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+             <p class="prediction-date">
+                Next Trading Day:
+                <span id="prediction-date">--</span>
+            </p>
+
+        </section>
+
+        <section class="panel">
+
+    <div class="panel-header">
+
+        <div>
+            <h2>Historical Price</h2>
+            <p>Last 60 trading days</p>
+        </div>
+
+    </div>
+
+    <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+    </div>
+
+</section>
+
+        <!-- Model Performance -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <div>
+                    <h2>Model Performance</h2>
+                    <p>Measured on unseen test data</p>
+                </div>
+
+            </div>
+
+
+            <div class="metrics">
+
+                <div class="metric">
+
+                    <span>
+                        MAE
+                    </span>
+
+                    <strong id="mae">--</strong>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <span>
+                        RMSE
+                    </span>
+
+                    <strong id="rmse">--</strong>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <span>
+                        MAPE
+                    </span>
+
+                    <strong id="mape">--</strong>
+
+                </div>
+
+
+                <div class="metric">
+
+                    <span>
+                        R²
+                    </span>
+
+                    <strong id="r2">--</strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Information -->
+
+        <section class="disclaimer">
+
+            <h3>About this prediction</h3>
+
+            <p>
+                The prediction is generated using an LSTM model trained
+                on historical AMZN price data and technical indicators.
+                The displayed metrics represent performance on unseen
+                test data.
+            </p>
+
+             <p class="warning">
+        ⚠ This project is for educational and research purposes
+        only and should not be considered financial advice.
+             </p>
+
+        </section>
+
+
+        <div id="loading" class="loading hidden">
+            Generating prediction...
+        </div>
+
+        <div id="error" class="error hidden">
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Stock Price Prediction · Machine Learning Project
+        </p>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script src="/dashboard/script.js"></script>
+
+</body>
+
+</html>

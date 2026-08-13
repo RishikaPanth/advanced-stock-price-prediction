@@ -42,6 +42,8 @@ def build_lstm_model(look_back, num_features):
         learning_rate=LEARNING_RATE
     )
 
+    print("Learning Rate:", LEARNING_RATE)
+    
     model.compile(
         optimizer=optimizer,
         loss="mean_squared_error"

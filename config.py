@@ -21,9 +21,13 @@ LOOK_BACK = 35
 
 EPOCHS = 100
 
-BATCH_SIZE = 32
+BATCH_SIZE = 64
 
-LEARNING_RATE = 0.001
+LEARNING_RATE = 0.0005
+
+LSTM_UNITS = [100, 50, 50]
+
+DROPOUT_RATE = 0.2
 
 TARGET_COLUMN = "Close"
 
@@ -43,19 +47,13 @@ MODEL_PATH = "models/lstm_model.keras"
 
 SCALER_PATH = "models/scaler.pkl"
 
+METRICS_PATH = "models/metrics.json"
+
 
 
 # Features
 
 
-
-
-
-LSTM_UNITS = [100, 50, 50]
-
-DROPOUT_RATE = 0.2
-
-LEARNING_RATE = 0.001
 
 SHOW_DATA_PREVIEW = False
 

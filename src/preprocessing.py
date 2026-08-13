@@ -11,9 +11,10 @@ def clean_data(df):
     return df
 
 def fit_scaler(df, feature_columns):
-    """
-    Fit the scaler ONLY on training data.
-    """
+   
+    
+    ## Fit the scaler ONLY on training data.
+    
 
     scaler = MinMaxScaler()
 
